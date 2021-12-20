@@ -1,6 +1,6 @@
-const db = require("../app/models");
-db.mongoose
-  .connect(db.url, {
+const mongoose = require("mongoose");
+mongoose
+  .connect(process.env.CLUSTER_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })

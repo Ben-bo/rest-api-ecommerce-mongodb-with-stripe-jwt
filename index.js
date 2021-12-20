@@ -6,7 +6,9 @@ const port = process.env.PORT;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-require("./app/routes/user.route")(app);
+
+const { auth } = require("./app/routes");
+app.use("/api", auth);
 
 app.listen(port, () => {
   console.log(`server run on port :${port}`);
